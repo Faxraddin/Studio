@@ -1,7 +1,8 @@
+# React + Vite
 
-### Images of The Fashion Studio Website:
-![HOME](https://github.com/codebucks27/wibe-studio-starter-files/blob/main/Wibe-Home-Desktop.png)
-![ABOUT](https://github.com/codebucks27/wibe-studio-starter-files/blob/main/Wibe-About-Desktop.png)
-![HOME](https://github.com/codebucks27/wibe-studio-starter-files/blob/main/Wibe-Home-Moblie.png)
-![ABOUT](https://github.com/codebucks27/wibe-studio-starter-files/blob/main/Wibe-About-Mobile.png)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
