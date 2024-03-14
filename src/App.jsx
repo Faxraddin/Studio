@@ -6,6 +6,7 @@ import "@fontsource/kaushan-script";
 import "@fontsource/sirin-stencil";
 import {dark} from './Themes';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import Home from './sections/Home';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
           containerRef={containerRef}
         >
           <main data-scroll-container ref={containerRef} className='app'>
-            <h1>hnjk</h1>
+            <Home/>
           </main>
         </LocomotiveScrollProvider>
       </ThemeProvider>
