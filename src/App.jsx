@@ -6,6 +6,8 @@ import "@fontsource/kaushan-script";
 import "@fontsource/sirin-stencil";
 import {dark} from './Themes';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import 'locomotive-scroll/dist/locomotive-scroll.css'
+
 import Home from './sections/Home';
 
 function App() {
