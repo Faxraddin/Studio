@@ -14,6 +14,7 @@ const Home = () => {
     <Section>
         <CoverVideo/>
         <Logo/>
+        
     </Section>
   )
 }
