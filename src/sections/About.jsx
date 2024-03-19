@@ -9,7 +9,6 @@ const Section = styled.section`
 position:relative;
 min-height: 100vh;
 width:80vw;
-overflow:hidden;
 
 dislay:flex;
 margin:0 auto;
@@ -36,8 +35,8 @@ const About = () => {
         </div>
         <div className="w-1/2 relative ">
             <img src={img1} className="h-auto w-full" alt="img1"/>
-            <img src={img2} className="h-auto  small-img-1" alt="img3"/>
-            <img src={img3} className="h-auto  small-img-2" alt="img3"/>
+            <img src={img2} data-scroll data-scroll-speed="5" className="h-auto  small-img-1" alt="img3"/>
+            <img src={img3} data-scroll data-scroll-speed="-2" className="h-auto  small-img-2" alt="img3"/>
         </div>
     </Section>
   ) 
