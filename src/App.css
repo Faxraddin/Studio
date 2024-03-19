@@ -18,3 +18,17 @@ a{
 .polygon{
   clip-path: polygon(0 0, 100% 0, 80% 100%, 21% 100%);
 }
+
+.small-img-1{
+  width: 40%;
+  position: absolute;
+  right: 95%;
+  bottom: 10%;
+}
+
+.small-img-2{
+  width: 40%;
+  position: absolute;
+  left: 80%;
+  bottom: 30%;
+}
