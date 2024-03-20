@@ -1,15 +1,18 @@
-import React from "react"
+import React, { useLayoutEffect, useRef } from "react"
 import styled from "styled-components"
 
 import img1 from '../assets/Images/1.webp'
 import img2 from '../assets/Images/2.webp'
 import img3 from '../assets/Images/3.webp'
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const Section = styled.section`
 position:relative;
 width:100vw;
 height:auto;
 overflow:hidden;
+top:40px;
 
 display: flex; 
 justify-content:flex-start;
@@ -18,6 +21,32 @@ margin:0 auto;
 `
 
 const Shop = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const ref = useRef(null);
+  const horizontalRef = useRef(null);
+
+  useLayoutEffect(()=>{
+    let element = ref.current;
+    const scrollingElement = horizontalRef.current;
+    let pinWrapWidth = scrollingElement.offsetWidth;
+    let tl = gsap.timeline();
+    setTimeout(()=>{
+      tl.to(element,{
+        scrollTrigger:{
+          trigger: element,
+          start:'top top',
+          end:pinWrapWidth,
+          pin:true,
+          scrub:true
+        },
+        ease:'none',
+        height:`${scrollingElement.scrollWidth}px`
+      })
+    },1000)
+    return(()=>{
+
+    })
+  },[])
   return (
     <Section data-scroll data-scroll-speed='-1'>
       <h1 style={{fontFamily:'Kaushan Script'}} className="text-[5em] shadow-lg z-[11] text-[#fff] absolute m-auto font-semibold top-[1rem] left-[5%]">New Arrivals</h1>
@@ -32,7 +61,7 @@ const Shop = () => {
           It is great for us to carry our new clothes all around the country and look different.
         </p>
       </div>
-      <div className="bg-[#bebebe] absolute left-[35%] min-h-[100vh] w-[65%] flex justify-start items-center pl-[30%]">
+      <div ref={horizontalRef} className="bg-[#bebebe] absolute left-[35%] min-h-[100vh] w-[65%] flex justify-start items-center pl-[30%]">
         <h1 className="w-[5rem] margin-[0 2rem]">img</h1>
         <h1 className="w-[5rem] margin-[0 2rem]">img</h1>
         <h1 className="w-[5rem] margin-[0 2rem]">img</h1>

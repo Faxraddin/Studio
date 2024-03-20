@@ -12,6 +12,7 @@ import Home from './sections/Home';
 import { AnimatePresence } from 'framer-motion';
 import About from './sections/About';
 import Shop from './sections/Shop';
+import ScrollTriggerProxy from './components/ScrollTriggerProxy';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           watch={[]}
           containerRef={containerRef}
         >
+          <ScrollTriggerProxy/>
           <AnimatePresence>
             <main data-scroll-container ref={containerRef} className='app'>
               <Home/>
