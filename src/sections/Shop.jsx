@@ -4,8 +4,8 @@ import styled from "styled-components"
 import img1 from '../assets/Images/1.webp'
 import img2 from '../assets/Images/2.webp'
 import img3 from '../assets/Images/3.webp'
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Section = styled.section`
 position:relative;
@@ -19,6 +19,32 @@ justify-content:flex-start;
 align-items:flex-start;
 margin:0 auto;
 `
+
+const Item = styled.div`
+display:inline-block;
+width:20rem;
+margin-right:6rem;
+img{
+  cursor:pointer;
+  height:auto;
+  width:100%;
+};
+
+h1{
+  font-weight:300;
+  text-align:center;
+  cursor:pointer;
+}
+`
+
+const Product = ({img, title='' }) => {
+  return(
+    <Item>
+      <img src={img} alt={title}/>
+      <h1>{title}</h1>
+    </Item>
+  )
+}
 
 const Shop = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -43,11 +69,25 @@ const Shop = () => {
         ease:'none',
         height:`${scrollingElement.scrollWidth}px`
       })
+
+      tl.to(scrollingElement,{
+        scrollTrigger:{
+          trigger: scrollingElement,
+          start:'top top',
+          end:pinWrapWidth,
+          
+          scrub:true,
+          scroller:'.App'
+        },
+        ease:'none',
+        x:-pinWrapWidth
+      })
+
       ScrollTrigger.refresh();
     },1000)
-    return(()=>{
+    return()=>{
 
-    })
+    }
   },[])
   return (
     <Section data-scroll data-scroll-speed='-1'>
@@ -65,11 +105,11 @@ const Shop = () => {
         </p>
       </div>
       <div ref={horizontalRef} className="bg-[#bebebe] absolute left-[35%] min-h-[100vh] w-[65%] flex justify-start items-center pl-[30%]">
-        <h1 className="w-[5rem] margin-[0 2rem]">img</h1>
-        <h1 className="w-[5rem] margin-[0 2rem]">img</h1>
-        <h1 className="w-[5rem] margin-[0 2rem]">img</h1>
-        <h1 className="w-[5rem] margin-[0 2rem]">img</h1>
-        <h1 className="w-[5rem] margin-[0 2rem]">img</h1>
+        <Product img={img1} title="xyz"/>
+        <Product img={img1} title="xyz"/>
+        <Product img={img1} title="xyz"/>
+        <Product img={img1} title="xyz"/>
+        <Product img={img1} title="xyz"/>
       </div>
     </Section>
   )
